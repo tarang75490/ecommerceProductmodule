@@ -1448,16 +1448,19 @@ exports.getSubCategories = {
                         description: 'Get Inventory of Particular Variant',
                         tags: ["Ecommerce","Products"],
                         summary: 'Get Inventory',
-                        query: {
+                        body: {
                             "type": "object",
                             "properties": {
-                                "variantId": {
-                                    "type": "string"
+                                "variantIds": {
+                                    "type": "array",
+                                    "items":{
+                                        "type":"string"
+                                    }
                                 }
                                 
                             },
                             "required": [
-                                "variantId",
+                                "variantIds",
                             ]
                         },
                         response: {
@@ -1473,23 +1476,29 @@ exports.getSubCategories = {
                                         "type": "string"
                                     },
                                     "data": {
-                                        "type":"object",
-                                        "properties":{
-                                            "variantId":{
-                                                "type":"string"
-                                            },
-                                            "inventory":{
-                                                "type":"number"
-                                            },
-                                            "reservedInventory":{
-                                                "type":"number"
-                                            },
-                                        },
-                                        "required":[
-                                            "variantId",
-                                            "inventory",
-                                            "reservedInventory"
-                                        ]
+                                        
+                                                "type":"array",
+                                                "items":{
+                                                    "type":"object",
+                                                    "properties":{
+                                                        "variantId":{
+                                                            "type":"string"
+                                                        },
+                                                        "inventory":{
+                                                            "type":"number"
+                                                        },
+                                                        "reservedInventory":{
+                                                            "type":"number"
+                                                        },
+                                                    },
+                                                    "required":[
+                                                        "variantId",
+                                                        "inventory",
+                                                        "reservedInventory"
+                                                    ]
+                                                }
+                                       
+                                        
                                     },
                                     },
                                 
@@ -1552,22 +1561,29 @@ exports.getSubCategories = {
                             description: 'Lock Inventory of Particular Variant',
                             tags: ["Ecommerce","Products"],
                             summary: 'Lock Inventory',
-                            query: {
+                            body: {
                                 "type": "object",
-                                "properties": {
-                                    "variantId": {
-                                        "type": "string"
+                                "properties":{
+                                "variantIds":{
+                                    "type":"array",
+                                    "items":{
+                                        "type":"string",
+                                            
+                                            },
                                     },
-                                    "quantity": {
-                                        "type": "number"
-                                    },
-                                    
+                                    "quantities":{
+                                        "type":"array",
+                                        "items":{
+                                            "type":"number",   
+                                            },
+                                        }
                                 },
                                 "required": [
-                                    "variantId",
-                                    "quantity"
+                                    "variantIds",
+                                    "quantities"
                                 ]
-                            },
+                            
+                        },
                             response: {
                                 200: {
                                     description: 'Successful response',
@@ -1645,25 +1661,33 @@ exports.getSubCategories = {
                                 description: 'Maintain Inventory after Payment',
                                 tags: ["Ecommerce","Products"],
                                 summary: 'Maintain Inventory',
-                                query: {
+                                body: {
                                     "type": "object",
-                                    "properties": {
-                                        "variantId": {
-                                            "type": "string"
+                                    "properties":{
+                                    "variantIds":{
+                                        "type":"array",
+                                        "items":{
+                                            "type":"string",
+                                                
+                                                },
                                         },
-                                        "quantity": {
-                                            "type": "number"
-                                        },
-                                        "message": {
-                                            "type": "string"
-                                        },   
+                                        "quantities":{
+                                            "type":"array",
+                                            "items":{
+                                                "type":"number",   
+                                                },
+                                            },
+                                            "message":{
+                                                "type":"string"
+                                            }
                                     },
                                     "required": [
-                                        "variantId",
-                                        "quantity",
+                                        "variantIds",
+                                        "quantities",
                                         "message"
                                     ]
-                                },
+                                
+                            },
                                 response: {
                                     200: {
                                         description: 'Successful response',
@@ -1677,23 +1701,23 @@ exports.getSubCategories = {
                                                 "type": "string"
                                             },
                                             "data": {
-                                                "type":"object",
-                                                "properties":{
-                                                    "variantId":{
-                                                        "type":"string"
-                                                    },
-                                                    "inventory":{
-                                                        "type":"number"
-                                                    },
-                                                    "reservedInventory":{
-                                                        "type":"number"
-                                                    },
-                                                },
-                                                "required":[
-                                                    "variantId",
-                                                    "inventory",
-                                                    "reservedInventory"
-                                                ]
+                                                // "type":"object",
+                                                // "properties":{
+                                                //     "variantId":{
+                                                //         "type":"string"
+                                                //     },
+                                                //     "inventory":{
+                                                //         "type":"number"
+                                                //     },
+                                                //     "reservedInventory":{
+                                                //         "type":"number"
+                                                //     },
+                                                // },
+                                                // "required":[
+                                                //     "variantId",
+                                                //     "inventory",
+                                                //     "reservedInventory"
+                                                // ]
                                             },
                                             },
                                         

@@ -180,9 +180,9 @@ exports.validateincreasePriorityRequest = function (req,res,done) {
 
 
 exports.validateGetInventoryRequest   = function (req,res,done){
-    if (!req.query.variantId) {
+    if (req.body.variantIds.length === 0) {
         res.code(400)
-        done(new HttpError('faliure', 20001, 'Variant Id  is missing'))
+        done(new HttpError('faliure', 20001, 'Variant Ids  is missing'))
     }
     else {
         done()
@@ -191,10 +191,10 @@ exports.validateGetInventoryRequest   = function (req,res,done){
 
 
 exports.validateReduceInventoryRequest = function (req,res,done){
-    if (!req.query.variantId) {
+    if (!req.body.variantIds) {
         res.code(400)
         done(new HttpError('faliure', 20001, 'Variant Id  is missing'))
-    }else if (!req.query.quantity) {
+    }else if (!req.body.quantities) {
         res.code(400)
         done(new HttpError('faliure', 20001, 'Quantity  is missing'))
     }
@@ -203,13 +203,13 @@ exports.validateReduceInventoryRequest = function (req,res,done){
     }
 } 
 exports.validateMaintainInventoryRequest = function (req,res,done){
-    if (!req.query.variantId) {
+    if (!req.body.variantIds) {
         res.code(400)
         done(new HttpError('faliure', 20001, 'Variant Id  is missing'))
-    }else if (!req.query.quantity) {
+    }else if (!req.body.quantities) {
         res.code(400)
         done(new HttpError('faliure', 20001, 'Quantity  is missing'))
-    }else if(!req.query.message){
+    }else if(!req.body.message){
         res.code(400)
         done(new HttpError('faliure', 20001, 'Message  is missing'))
     }

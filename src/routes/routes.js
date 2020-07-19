@@ -83,7 +83,7 @@ const routes = [
         // preValidation: validators.validateUploadFileRequest       
     },
     {
-        method: "GET",
+        method: "POST",
         url: "/getInventory",
         handler: controllers.getInventory, 
         schema:documentation.getInventory,

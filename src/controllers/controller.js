@@ -212,7 +212,7 @@ exports.uploadFile = async (req, res) => {
 
 exports.getInventory = async (req, res) => {
     try {
-        let response = await inventoryService.getInventory(req.fastify,req.query)
+        let response = await inventoryService.getInventory(req.fastify,req.body)
         console.log(response)
         if(response.error){
             throw new HttpError('faliure', 22005, response.error)
@@ -229,7 +229,7 @@ exports.getInventory = async (req, res) => {
 
 exports.reduceInventory = async (req, res) => {
     try {
-        let response = await inventoryService.reduceInventory(req.fastify,req.query)
+        let response = await inventoryService.reduceInventory(req.fastify,req.body)
         if(response.error){
             throw new HttpError('faliure', 22005, response.error)
         }
@@ -248,7 +248,7 @@ exports.reduceInventory = async (req, res) => {
 
 exports.maintainInventory = async (req, res) => {
     try {
-        let response = await inventoryService.maintainInventory(req.fastify,req.query)
+        let response = await inventoryService.maintainInventory(req.fastify,req.body)
         console.log(response)
         if(response.error){
             throw new HttpError('faliure', 22005, response.error)

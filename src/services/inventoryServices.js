@@ -46,13 +46,14 @@ const maintainInventory = async (fastify,maintainInventoryRequest)=>{
     const inventory =  await getInventory(fastify,{variantIds:maintainInventoryRequest.variantIds})
     const size = maintainInventoryRequest.variantIds.length
 
-    for(let i =0 ;i<size;i++){
-        if(inventory[i].inventory - inventory[i].reservedInventory < maintainInventoryRequest.quantities[i]){
-                return{
-                    error:"Mismanagement"
-                }
-            }
-    }
+    // for(let i =0 ;i<size;i++){
+    //     console.log(inventory[i].inventory - inventory[i].reservedInventory < maintainInventoryRequest.quantities[i])
+    //     if(inventory[i].inventory - inventory[i].reservedInventory < maintainInventoryRequest.quantities[i]){
+    //             return{
+    //                 error:"Mismanagement"
+    //             }
+    //         }
+    // }
     for(let i =0 ;i<size;i++){
     
     if (maintainInventoryRequest.message === "success"){
@@ -63,7 +64,7 @@ const maintainInventory = async (fastify,maintainInventoryRequest)=>{
         
     }else if (maintainInventoryRequest.message === "error"){
         
-            inventory[i].inventory += maintainInventoryRequest.quantities[i]
+            inventory[i].reservedInventory += maintainInventoryRequest.quantities[i]
             await new Inventory(inventory[i]).save()
         
     }else {

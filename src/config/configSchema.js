@@ -4,15 +4,11 @@ const configSchema = {
         "server": {
             "type": "object",
             "properties": {
-                "port": {
-                    "type": "string"
-                },
                 "logLevel": {
                     "type": "string"
                 }
             },
             "required": [
-                "port",
                 "logLevel"
             ]
         },

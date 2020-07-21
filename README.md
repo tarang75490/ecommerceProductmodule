@@ -10,13 +10,13 @@ This is the product subdomain or the model of My ecommerce project which is base
 
 ## About Project Setup
 ### Brief Overview 
-1. ServiceLayer 
+1. Service Layer 
   - All the logic inside this layer which includes quering the database calling other Api.
-2. Controllerlayer  
+2. Controller Layer  
  - To give response and error handling  Service Layer is called here
 3. Validation Layer
   - To validate the incoming params ,query and body about the required input and other validations.
-4. Schema
+4. Schemas
  - Defining the structure of input and all the possible outputs indifferent cases with 200,201,400,500 status codes 
 5. Routes
  - All the layers  combined inside the routes.js file provide url, validator, schema. Aggregation of All the layers
@@ -31,8 +31,9 @@ This is the product subdomain or the model of My ecommerce project which is base
 > You can setup env file to store the Credentials like Mongodb url , Database Name ,etc
 
 #### Run at localhost using 
-> npm run start
-> npm run dev
+>   **npm run start** 
+
+>   **npm run dev**
 
 
 > Visit Swagger To [Product Apis](https://colossalproduct.herokuapp.com/documentation/static/index.html#) Related to this domain 

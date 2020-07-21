@@ -1,6 +1,7 @@
     {
     "server" : {
-        "logLevel": "info"
+        "logLevel": "info",
+        "port":"$PORT"
     },
     "awsS3":{
             "BucketName":"$BUCKET_NAME",

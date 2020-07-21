@@ -6,10 +6,14 @@ const configSchema = {
             "properties": {
                 "logLevel": {
                     "type": "string"
+                },
+                "PORT": {
+                    "type": "string"
                 }
             },
             "required": [
-                "logLevel"
+                "logLevel",
+                "port"
             ]
         },
         "awsS3": {

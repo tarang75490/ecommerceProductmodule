@@ -1,24 +1,39 @@
 # Product
-
 This is the product subdomain or the model of My ecommerce project which is based on them microservice architectures.
 
+## Technologies Used
+- MongoDb for Database 
+- Fastify for making routes 
+- Integrated all apis with swagger 
+- With NodeJs to run javascript at runtime Environment 
+- Mongoose for mongodb and javascript
 
-In this service I have used Mongo for Database and fastify for making routes and integrated all apis with swagger with the help of nodeJs.
-All the logic inside the service layer and there is controlller layer.
- And there is validator to validate the incoming parameters and there is schema for swagger.And models for mongodb 
- Berify Overview 
- ServiceLayer:all the logic inside this including quering the database.
- Controllerlayer: 
- to give response and error handling 
- Validation Layer:
-to validate the incoming params ,query and body about the required input and other validations.
-Schema:
-defining the structure of input and all the possible outputs indifferent cases with 200,400,500 status codes 
-Routes:
-All the seare combined inside the routes.js file And finally app.js file for all the initial setups for mongodb , fastify routes,etc .
-T
+## About Project Setup
+### Brief Overview 
+1. ServiceLayer 
+  - All the logic inside this layer which includes quering the database calling other Api.
+2. Controllerlayer  
+ - To give response and error handling  Service Layer is called here
+3. Validation Layer
+  - To validate the incoming params ,query and body about the required input and other validations.
+4. Schema
+ - Defining the structure of input and all the possible outputs indifferent cases with 200,201,400,500 status codes 
+5. Routes
+ - All the layers  combined inside the routes.js file provide url, validator, schema. Aggregation of All the layers
+6. Config 
+ - There is config file for setting up 
+    - env Variable schema
+    - env configuration
+    - swagger configuration
+ 
+7. And finally app.js file for all the initial setups for mongodb , fastify routes, plugins etc .
+
+> You can setup env file to store the Credentials like Mongodb url , Database Name ,etc
+
+#### Run at localhost using 
+> npm run start
+> npm run dev
 
 
+> Visit Swagger To [Product Apis](https://colossalproduct.herokuapp.com/documentation/static/index.html#) Related to this domain 
 
-The APIs included in this module is 
-POST APIS : 

@@ -31,9 +31,9 @@ This is the product subdomain or the model of My ecommerce project which is base
 > You can setup env file to store the Credentials like Mongodb url , Database Name ,etc
 
 #### Run at localhost using 
->   **npm run start** 
+   **npm run start** 
 
->   **npm run dev**
+   **npm run dev**
 
 
 > Visit Swagger To [Product Apis](https://colossalproduct.herokuapp.com/documentation/static/index.html#) Related to this domain 

@@ -16,7 +16,7 @@ exports.options = {
     },
     // host: 'localhost:'+process.env.PORT, 
     host: 'colossalproduct.herokuapp.com',
-    schemes: ['http'],
+    schemes: ['https'],
     consumes: ['application/json'],
     produces: ['application/json']
   }

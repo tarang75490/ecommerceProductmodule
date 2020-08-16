@@ -13,7 +13,7 @@ const configSchema = {
             },
             "required": [
                 "logLevel",
-                "port"
+                "PORT"
             ]
         },
         "awsS3": {

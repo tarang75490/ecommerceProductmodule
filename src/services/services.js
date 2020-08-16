@@ -154,12 +154,16 @@ const createVariant = async (fastify,createVariantRequest)=>{
 }
 
 const getVariant = async (fastify,getVariantRequest) => {
+    
     const variants = await Variant.find({...getVariantRequest})
+    console.log(variants)
     const product = await getProducts(fastify,{...getVariantRequest})
+    console.log(product)
     const productInfo = {
-        ...product,
-        varaints:variants
+        ...product[0]._doc,
+        variants:variants
     }
+    console.log(productInfo)
     return productInfo
 }
 
@@ -173,16 +177,19 @@ const inputBrowse = async (fastify) => {
     })
     variants.forEach(async (variant) => {
             const product = products[variant.productId]
+            const inventory = await Inventory.findOne({variantId:variant.variantId})
             const summary = new Summary({
                 variantId : variant.variantId,
                 productId: variant.productId,
                 mainCategory: product.mainCategory,
                 subCategory: product.subCategory,
+                quantity:inventory.reservedInventory,
                 price: variant.price,
                 productFeatures:{
                         ...product.features,
                         thumbnails:product.thumbnails,
                         productRating: product.productRating,
+                        productName:product.productName,
                         BRAND:product.brand}
             })
             console.log(summary)

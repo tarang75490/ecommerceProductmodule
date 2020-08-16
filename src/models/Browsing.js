@@ -20,6 +20,10 @@ const browseSchema = new mongoose.Schema({
         enum:["MEN","WOMEN","ELECTRONICS","APPLIANCES"],
         required:true
     },
+    quantity:{
+        type:Number,
+        required:true
+    },
     subCategory:{
         type:String,
         required:true,

@@ -85,9 +85,6 @@ exports.validateCreateCategoryRequest = function (req, res, done) {
     }else if (req.body.features.length === 0 ) {
         res.code(400)
         done(new HttpError('faliure', 20001, 'features is missing'))
-    }else if (!(["MEN","ELECTRONICS","APPLIANCES","WOMEN"]).includes(req.body.mainCategory)){
-        res.code(400)
-        done(new HttpError('faliure',20001,"check main category"))
     }
     else {
         done()
@@ -152,7 +149,7 @@ exports.validateFilterBrowseRequest   = function (req,res,done){
     }else if (!req.body.subCategory) {
         res.code(400)
         done(new HttpError('faliure', 20001, 'Sub Category  is missing'))
-    }else if ((!["MEN","ELECTRONICS","APPLIANCES","WOMEN"]).includes(req.body.mainCategory)){
+    }else if (!(["MEN","ELECTRONICS","APPLIANCES","WOMEN"]).includes(req.body.mainCategory)){
         res.code(400)
         done(new HttpError('faliure',20001,"check main category"))
     }

@@ -790,6 +790,9 @@ exports.getProducts = {
                             "additionalProperties":{
                                 "type":"string"
                             }
+                        },
+                        "workingDays":{
+                            "type":"string"
                         }
                     },
                     "required": [
@@ -1089,14 +1092,16 @@ exports.getSubCategories = {
                                     "type":"string",
                                 },
                                 "description":{
-                                    "type":"string",
+                                    "type":"array",
                                 },
                                 "thumbnails":{
                                     "type":"array",
                                     "items":{
                                         "type":"string",
-                                        "default":""
                                     }
+                                },
+                                "workingDays":{
+                                    "type":"string"
                                 },
                                 "productRating":{
                                     "type":"number",
@@ -1116,6 +1121,10 @@ exports.getSubCategories = {
                                 },
                                 "features":{
                                     "type":"object",
+                                        "additionalProperties":{
+                                            "type":"string"
+                                        }
+                  
                                 },
                             "variants":{
                             "type": "array",
@@ -1256,6 +1265,9 @@ exports.getSubCategories = {
                                     "price": {
                                         "type": "number"
                                     },
+                                    "quantity":{
+                                        "type": "number"
+                                    },
                                    
                                     "mainCategory":{
                                         "type":"string",
@@ -1267,11 +1279,13 @@ exports.getSubCategories = {
                                     "productFeatures":{
                                         "type":"object",
                                         "properties":{
-                                        "additionalProperties":{
+                                        "productName":{
                                             "type":"string"
-
                                         },
-                                        "companyName":{
+                                        "productRating":{
+                                            "type":"number"
+                                        },
+                                        "BRAND":{
                                             "type":"string",
                                         },
                                         "thumbnails":{
@@ -1282,8 +1296,10 @@ exports.getSubCategories = {
                                         },
                                     },
                                     "required":[
-                                        "companyName",
-                                        "thumbnails"
+                                        "BRAND",
+                                        "thumbnails",
+                                        "productRating",
+                                        "productName"
                                     ]
                                     }
                                 },

@@ -47,6 +47,10 @@ mongoose.plugin((schema) => {
     }
   };
 });
+//cross-origin  
+fastify.register(require('fastify-cors'), {
+  origin: '*',
+});
 
 
 fastify.register(require('fastify-multipart'))

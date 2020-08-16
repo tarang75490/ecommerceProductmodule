@@ -24,7 +24,27 @@ exports.createProduct= async (req, res) => {
 
 exports.getProducts = async (req, res) => {
     try {
-        console.log(res.body)
+        consol   // getFileContent(contentCallback) { 
+            //     let fileContent = this.uploadRequest.fileContent
+          
+            //     if (!fileContent) { 
+            //         this.fastify.axios.get(this.uploadRequest.fileUrl,
+            //             { responseType: 'arraybuffer', encoding: "binary" }).then(content => {
+            //                   contentCallback({
+            //                     "content": Buffer.from(content.data, "binary"),
+            //                     "contentEncoding": "binary"
+            //                 })
+            //             }).catch(error => {
+            //                 contentCallback(null, error)  
+            //             })
+            //     } else {
+            //         const base64Data = new Buffer.from(fileContent.replace(/^data:.\/\w+;base64,/, ""), 'base64');
+            //         contentCallback({
+            //             "content": base64Data,
+            //             "contentEncoding": "base64" 
+            //         })
+            //     }
+            // }e.log(res.body)
         let response =  await service.getProducts(req.fastify, req.body) 
         if(response.error){
             res.code(400)
